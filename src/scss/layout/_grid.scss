@@ -1,0 +1,133 @@
+@use '../globals' as g;
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  gap: 1rem;
+  margin:auto;
+  width: min(100% - 40px, 1440px);
+  
+  @media (min-width: 825px) {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 2.5rem;
+  }
+
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 2.5rem;
+  }
+
+  &__element {
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px hsla(0, 0%, 0%, 0.3);
+  }
+
+  &__element--primary {
+    background: g.$moderate-violet url('../assets/images/bg-pattern-quotation.svg') no-repeat 80% 0;
+    @media (min-width: 825px) {
+      grid-area: 1 / 1 / 2 / 3;
+    }
+
+    @media (min-width: 1200px) {
+      grid-area: 1 / 1 / 2 / 3;
+    }
+  }
+
+  &__element--secondary {
+    background-color: g.$very-dark-grayish-blue;
+  }
+
+  &__element--tertiary {
+    background-color: g.$white;
+  }
+
+  &__element--quaternary {
+    background-color: g.$very-dark-blackish-blue;
+    @media (min-width: 825px) {
+      grid-area: 2 / 2 / 3 / 4;
+    }
+
+    @media (min-width: 1200px) {
+      grid-area: 2 / 2 / 3 / 4;
+    }
+  }
+
+  &__element--helper {
+    @media (min-width: 825px) {
+     grid-area: 3 / 1 / 4 / 4;
+    }
+
+    @media (min-width: 1200px) {
+      grid-area: 1 / 4 / 3 / 5;
+    }
+  }
+
+  &__flex {
+    display: flex;
+    align-items: center;
+  }
+
+  &__img {
+    width: 40px;
+    border-radius: 30px;
+    margin-right: 1rem;
+  }
+
+  &__img--primary {
+     border: 2px solid transparentize(g.$light-gray, 0.5) ;
+  }
+    
+  &__img--secondary{
+    border: 2px solid g.$moderate-violet;
+  }
+  
+  &__name {
+    font-size: 1.2rem;
+  }
+
+  &__name--primary {
+    color: g.$light-grayish-blue;
+  }
+  
+  &__name--secondary {
+    color: g.$very-dark-blackish-blue;
+  }
+
+  &__verified--primary {
+    color: transparentize(g.$light-grayish-blue, 0.5);
+  }
+
+  &__verified--secondary {
+    color: transparentize(g.$very-dark-blackish-blue, 0.5);
+  }
+
+  &__headline {
+    margin: 1rem 0;
+    font-size: 2.15rem;
+  }
+  
+  &__headline--primary {
+    color: g.$light-grayish-blue;
+  }
+
+  &__headline--secondary {
+    color: g.$very-dark-blackish-blue;
+  }
+
+  &__paragraph {
+    line-height: 1.5;
+    font-size: 1.35rem;
+  }
+  
+  &__paragraph--primary {
+    color: transparentize(g.$light-grayish-blue, 0.3);
+  }
+
+  &__paragraph--secondary {
+    color: transparentize(g.$very-dark-blackish-blue, 0.3);
+  }
+}
